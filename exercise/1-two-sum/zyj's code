@@ -1,0 +1,18 @@
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+ int len,i,j;
+ int *result=NULL;
+ len=sizeof(nums);
+ for(i=0;i<len;i++){
+  for(j=i+1;j<len;j++){
+  //为什么j=i+1？
+  //是因为先遍历nums[i],每一个元素不能被使用两次,不用再从0开始了 
+   if(nums[i]+nums[j]==target){
+    result=(int *)malloc(sizeof(int)*2);
+    result[0]=i;
+    result[1]=j;
+    return result;
+   }
+  }
+ }
+ return result;
+}
